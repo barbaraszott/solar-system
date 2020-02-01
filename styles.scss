@@ -91,76 +91,58 @@ body {
 
 $orbits: (
 	'mercury': (
-		width: $orbit-mercury-size,
-		height: $orbit-mercury-size,
-		marginTop: -$orbit-mercury-size / 2,
-		marginLeft: -$orbit-mercury-size / 2,
+		size: $orbit-mercury-size,
+		margin: -$orbit-mercury-size / 2,
 		animationDuration: $orbital-period-mercury
 	),
 	'venus': (
-		width: $orbit-venus-size,
-		height: $orbit-venus-size,
-		marginTop: -$orbit-venus-size / 2,
-		marginLeft: -$orbit-venus-size / 2,
+		size: $orbit-venus-size,
+		margin: -$orbit-venus-size / 2,
 		animationDuration: $orbital-period-venus
 	),
 	'earth': (
-		width: $orbit-earth-size,
-		height: $orbit-earth-size,
-		marginTop: -$orbit-earth-size / 2,
-		marginLeft: -$orbit-earth-size / 2,
+		size: $orbit-earth-size,
+		margin: -$orbit-earth-size / 2,
 		animationDuration: $orbital-period-earth
 	),
 	'moon': (
-		width: $orbit-moon-size,
-		height: $orbit-moon-size,
-		marginTop: -$orbit-moon-size / 2,
-		marginLeft: -$orbit-moon-size / 2,
+		size: $orbit-moon-size,
+		margin: -$orbit-moon-size / 2,
 		animationDuration: $orbital-period-moon
 	),
 	'mars': (
-		width: $orbit-mars-size,
-		height: $orbit-mars-size,
-		marginTop: -$orbit-mars-size / 2,
-		marginLeft: -$orbit-mars-size / 2,
+		size: $orbit-mars-size,
+		margin: -$orbit-mars-size / 2,
 		animationDuration: $orbital-period-mars
 	),
 	'jupiter': (
-		width: $orbit-jupiter-size,
-		height: $orbit-jupiter-size,
-		marginTop: -$orbit-jupiter-size / 2,
-		marginLeft: -$orbit-jupiter-size / 2,
+		size: $orbit-jupiter-size,
+		margin: -$orbit-jupiter-size / 2,
 		animationDuration: $orbital-period-jupiter
 	),
 	'saturn': (
-		width: $orbit-saturn-size,
-		height: $orbit-saturn-size,
-		marginTop: -$orbit-saturn-size / 2,
-		marginLeft: -$orbit-saturn-size / 2,
+		size: $orbit-saturn-size,
+		margin: -$orbit-saturn-size / 2,
 		animationDuration: $orbital-period-saturn
 	),
 	'uranus': (
-		width: $orbit-uranus-size,
-		height: $orbit-uranus-size,
-		marginTop: -$orbit-uranus-size / 2,
-		marginLeft: -$orbit-uranus-size / 2,
+		size: $orbit-uranus-size,
+		margin: -$orbit-uranus-size / 2,
 		animationDuration: $orbital-period-uranus
 	),
 	'neptune': (
-		width: $orbit-neptune-size,
-		height: $orbit-neptune-size,
-		marginTop: -$orbit-neptune-size / 2,
-		marginLeft: -$orbit-neptune-size / 2,
+		size: $orbit-neptune-size,
+		margin: -$orbit-neptune-size / 2,
 		animationDuration: $orbital-period-neptune
 	)
 );
 
 @each $name, $orbit in $orbits {
 	.orbit--#{$name} {
-		width: map-get($orbit, width);
-		height: map-get($orbit, height);
-		margin-top: map-get($orbit, marginTop);
-		margin-left: map-get($orbit, marginLeft);
+		width: map-get($orbit, size);
+		height: map-get($orbit, size);
+		margin-top: map-get($orbit, margin);
+		margin-left: map-get($orbit, margin);
 		animation-duration: map-get($orbit, animationDuration);
 	}
 }
