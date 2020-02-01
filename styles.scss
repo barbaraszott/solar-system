@@ -234,6 +234,7 @@ $planets: (
 		width: map-get($planet, planetSize);
 		height: map-get($planet, planetSize);
 		background-color: map-get($planet, backgroundColor);
+		box-shadow: inset 0px #{map-get($planet, planetSize) / 5} 0px 0px map-get($planet, shadowColor);
 	}
 }
 
