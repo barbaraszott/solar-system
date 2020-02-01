@@ -81,3 +81,24 @@ body {
 	background-color: $sun-color;
 	transform: translate(-50%, -50%);
 }
+
+// ##################################################################
+// #################### PLANETS AND MOONS ###########################
+// ##################################################################
+
+.planet {
+	transform: translate(100%, 100%);
+}
+
+.planet--earth {
+	width: $earth-size;
+	height: $earth-size;
+	background-color: $earth-color;
+}
+
+.moon {
+	width: $moon-size;
+	height: $moon-size;
+	background-color: $moon-color;
+	transform: translate(50%, 50%);
+}
