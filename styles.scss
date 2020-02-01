@@ -173,51 +173,43 @@ $orbits: (
 
 $planets: (
 	'mercury': (
-		width: $mercury-size,
-		height: $mercury-size,
+		planetSize: $mercury-size,
 		backgroundColor: $mercury-color
 	),
 	'venus': (
-		width: $venus-size,
-		height: $venus-size,
+		planetSize: $venus-size,
 		backgroundColor: $venus-color
 	),
 	'earth': (
-		width: $earth-size,
-		height: $earth-size,
+		planetSize: $earth-size,
 		backgroundColor: $earth-color
 	),
 	'mars': (
-		width: $mars-size,
-		height: $mars-size,
+		planetSize: $mars-size,
 		backgroundColor: $mars-color
 	),
 	'jupiter': (
-		width: $jupiter-size,
-		height: $jupiter-size,
+		planetSize: $jupiter-size,
 		backgroundColor: $jupiter-color
 	),
 	'saturn': (
-		width: $saturn-size,
-		height: $saturn-size,
+		planetSize: $saturn-size,
 		backgroundColor: $saturn-color
 	),
 	'uranus': (
-		width: $uranus-size,
-		height: $uranus-size,
+		planetSize: $uranus-size,
 		backgroundColor: $uranus-color
 	),
 	'neptune': (
-		width: $neptune-size,
-		height: $neptune-size,
+		planetSize: $neptune-size,
 		backgroundColor: $neptune-color
 	)
 );
 
 @each $name, $planet in $planets {
 	.planet--#{$name} {
-		width: map-get($planet, width);
-		height: map-get($planet, height);
+		width: map-get($planet, planetSize);
+		height: map-get($planet, planetSize);
 		background-color: map-get($planet, backgroundColor);
 	}
 }
