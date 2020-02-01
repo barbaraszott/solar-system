@@ -28,22 +28,24 @@ body {
 }
 
 .orbit {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
   border: solid 1px rgba(255, 255, 255, 0.6);
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
 }
 
 .orbit--earth {
   width: 250px;
   height: 250px;
+  margin-top: -125px;
+  margin-left: -125px;
 }
 
 .orbit--moon {
   width: 50px;
   height: 50px;
+  margin-top: -25px;
+  margin-left: -25px;
 }
 
 .sun {
@@ -55,5 +57,24 @@ body {
   background-color: #fdb513;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.planet {
+  -webkit-transform: translate(100%, 100%);
+          transform: translate(100%, 100%);
+}
+
+.planet--earth {
+  width: 25px;
+  height: 25px;
+  background-color: #4983f8;
+}
+
+.moon {
+  width: 7px;
+  height: 7px;
+  background-color: #bdc5d0;
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
 }
 /*# sourceMappingURL=styles.css.map */

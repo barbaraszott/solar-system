@@ -51,21 +51,26 @@ body {
 // ##################################################################
 
 .orbit {
-	position: relative;
+	position: absolute;
 	top: 50%;
 	left: 50%;
 	border: solid 1px rgba(#fff, 0.6);
-	transform: translate(-50%, -50%);
 }
 
-.orbit--earth {
-	width: $orbit-earth-size;
-	height: $orbit-earth-size;
-}
+$orbits: (
+	"earth" : (width: $orbit-earth-size, height: $orbit-earth-size, marginTop: -$orbit-earth-size / 2, marginLeft: -$orbit-earth-size /
+				2),
+	"moon" : (width: $orbit-moon-size, height: $orbit-moon-size, marginTop: -$orbit-moon-size / 2, marginLeft: -$orbit-moon-size /
+				2)
+);
 
-.orbit--moon {
-	width: $orbit-moon-size;
-	height: $orbit-moon-size;
+@each $name, $orbit in $orbits {
+	.orbit--#{$name} {
+		width: map-get($orbit, width);
+		height: map-get($orbit, height);
+		margin-top: map-get($orbit, marginTop);
+		margin-left: map-get($orbit, marginLeft);
+	}
 }
 
 // ##################################################################
