@@ -92,13 +92,19 @@ $orbits: (
 // ##################################################################
 
 .planet {
-	transform: translate(100%, 100%);
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
-.planet--earth {
-	width: $earth-size;
-	height: $earth-size;
-	background-color: $earth-color;
+$planets: ("earth": (width: $earth-size, height: $earth-size, backgroundColor: $earth-color));
+
+@each $name, $planet in $planets {
+	.planet--#{$name} {
+		width: map-get($planet, width);
+		height: map-get($planet, height);
+		background-color: map-get($planet, backgroundColor);
+	}
 }
 
 .moon {
