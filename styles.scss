@@ -35,6 +35,16 @@ $orbit-saturn-size: 770px;
 $orbit-uranus-size: 910px;
 $orbit-neptune-size: 1100px;
 
+$orbital-period-mercury: 3.6s; // 88 days
+$orbital-period-venus: 9.2s; // 225 days
+$orbital-period-earth: 15s; // 365 days
+$orbital-period-moon: 1.2s; // 28 days
+$orbital-period-mars: 28.2s; // 687 days
+$orbital-period-jupiter: 178s; // 4333 days
+$orbital-period-saturn: 442s; // 10 759 days
+$orbital-period-uranus: 1261s; // 30 685 days
+$orbital-period-neptune: 2473.5s; // 60 189 days
+
 // ##################################################################
 // ####################### GENERAL STYLES ###########################
 // ##################################################################
@@ -80,24 +90,69 @@ body {
 }
 
 $orbits: (
-	"mercury" : (width: $orbit-mercury-size, height: $orbit-mercury-size, marginTop: -$orbit-mercury-size / 2, marginLeft: -$orbit-mercury-size /
-				2),
-	"venus" : (width: $orbit-venus-size, height: $orbit-venus-size, marginTop: -$orbit-venus-size / 2, marginLeft: -$orbit-venus-size /
-				2),
-	"earth" : (width: $orbit-earth-size, height: $orbit-earth-size, marginTop: -$orbit-earth-size / 2, marginLeft: -$orbit-earth-size /
-				2),
-	"moon" : (width: $orbit-moon-size, height: $orbit-moon-size, marginTop: -$orbit-moon-size / 2, marginLeft: -$orbit-moon-size /
-				2),
-	"mars" : (width: $orbit-mars-size, height: $orbit-mars-size, marginTop: -$orbit-mars-size / 2, marginLeft: -$orbit-mars-size /
-				2),
-	"jupiter" : (width: $orbit-jupiter-size, height: $orbit-jupiter-size, marginTop: -$orbit-jupiter-size / 2, marginLeft: -$orbit-jupiter-size /
-				2),
-	"saturn" : (width: $orbit-saturn-size, height: $orbit-saturn-size, marginTop: -$orbit-saturn-size / 2, marginLeft: -$orbit-saturn-size /
-				2),
-	"uranus" : (width: $orbit-uranus-size, height: $orbit-uranus-size, marginTop: -$orbit-uranus-size / 2, marginLeft: -$orbit-uranus-size /
-				2),
-	"neptune" : (width: $orbit-neptune-size, height: $orbit-neptune-size, marginTop: -$orbit-neptune-size / 2, marginLeft: -$orbit-neptune-size /
-				2)
+	'mercury': (
+		width: $orbit-mercury-size,
+		height: $orbit-mercury-size,
+		marginTop: -$orbit-mercury-size / 2,
+		marginLeft: -$orbit-mercury-size / 2,
+		animationDuration: $orbital-period-mercury
+	),
+	'venus': (
+		width: $orbit-venus-size,
+		height: $orbit-venus-size,
+		marginTop: -$orbit-venus-size / 2,
+		marginLeft: -$orbit-venus-size / 2,
+		animationDuration: $orbital-period-venus
+	),
+	'earth': (
+		width: $orbit-earth-size,
+		height: $orbit-earth-size,
+		marginTop: -$orbit-earth-size / 2,
+		marginLeft: -$orbit-earth-size / 2,
+		animationDuration: $orbital-period-earth
+	),
+	'moon': (
+		width: $orbit-moon-size,
+		height: $orbit-moon-size,
+		marginTop: -$orbit-moon-size / 2,
+		marginLeft: -$orbit-moon-size / 2,
+		animationDuration: $orbital-period-moon
+	),
+	'mars': (
+		width: $orbit-mars-size,
+		height: $orbit-mars-size,
+		marginTop: -$orbit-mars-size / 2,
+		marginLeft: -$orbit-mars-size / 2,
+		animationDuration: $orbital-period-mars
+	),
+	'jupiter': (
+		width: $orbit-jupiter-size,
+		height: $orbit-jupiter-size,
+		marginTop: -$orbit-jupiter-size / 2,
+		marginLeft: -$orbit-jupiter-size / 2,
+		animationDuration: $orbital-period-jupiter
+	),
+	'saturn': (
+		width: $orbit-saturn-size,
+		height: $orbit-saturn-size,
+		marginTop: -$orbit-saturn-size / 2,
+		marginLeft: -$orbit-saturn-size / 2,
+		animationDuration: $orbital-period-saturn
+	),
+	'uranus': (
+		width: $orbit-uranus-size,
+		height: $orbit-uranus-size,
+		marginTop: -$orbit-uranus-size / 2,
+		marginLeft: -$orbit-uranus-size / 2,
+		animationDuration: $orbital-period-uranus
+	),
+	'neptune': (
+		width: $orbit-neptune-size,
+		height: $orbit-neptune-size,
+		marginTop: -$orbit-neptune-size / 2,
+		marginLeft: -$orbit-neptune-size / 2,
+		animationDuration: $orbital-period-neptune
+	)
 );
 
 @each $name, $orbit in $orbits {
@@ -106,6 +161,7 @@ $orbits: (
 		height: map-get($orbit, height);
 		margin-top: map-get($orbit, marginTop);
 		margin-left: map-get($orbit, marginLeft);
+		animation-duration: map-get($orbit, animationDuration);
 	}
 }
 
@@ -134,14 +190,46 @@ $orbits: (
 }
 
 $planets: (
-	"mercury": (width: $mercury-size, height: $mercury-size, backgroundColor: $mercury-color),
-	"venus": (width: $venus-size, height: $venus-size, backgroundColor: $venus-color),
-	"earth": (width: $earth-size, height: $earth-size, backgroundColor: $earth-color),
-	"mars": (width: $mars-size, height: $mars-size, backgroundColor: $mars-color),
-	"jupiter": (width: $jupiter-size, height: $jupiter-size, backgroundColor: $jupiter-color),
-	"saturn": (width: $saturn-size, height: $saturn-size, backgroundColor: $saturn-color),
-	"uranus": (width: $uranus-size, height: $uranus-size, backgroundColor: $uranus-color),
-	"neptune": (width: $neptune-size, height: $neptune-size, backgroundColor: $neptune-color)
+	'mercury': (
+		width: $mercury-size,
+		height: $mercury-size,
+		backgroundColor: $mercury-color
+	),
+	'venus': (
+		width: $venus-size,
+		height: $venus-size,
+		backgroundColor: $venus-color
+	),
+	'earth': (
+		width: $earth-size,
+		height: $earth-size,
+		backgroundColor: $earth-color
+	),
+	'mars': (
+		width: $mars-size,
+		height: $mars-size,
+		backgroundColor: $mars-color
+	),
+	'jupiter': (
+		width: $jupiter-size,
+		height: $jupiter-size,
+		backgroundColor: $jupiter-color
+	),
+	'saturn': (
+		width: $saturn-size,
+		height: $saturn-size,
+		backgroundColor: $saturn-color
+	),
+	'uranus': (
+		width: $uranus-size,
+		height: $uranus-size,
+		backgroundColor: $uranus-color
+	),
+	'neptune': (
+		width: $neptune-size,
+		height: $neptune-size,
+		backgroundColor: $neptune-color
+	)
 );
 
 @each $name, $planet in $planets {
@@ -157,4 +245,24 @@ $planets: (
 	height: $moon-size;
 	background-color: $moon-color;
 	transform: translate(50%, 50%);
+}
+
+// ##################################################################
+// ###################### ANIMATION TIME! ###########################
+// ##################################################################
+
+@keyframes animate--orbit {
+	0% {
+		transform: rotateZ(0deg);
+	}
+
+	100% {
+		transform: rotateZ(-360deg);
+	}
+}
+
+.orbit {
+	animation-name: animate--orbit;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
 }
