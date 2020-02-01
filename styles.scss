@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'sun';
 @import 'orbits';
 @import 'planets-moons';
 
@@ -35,19 +36,4 @@ body {
 .moon,
 .orbit {
 	border-radius: 50%;
-}
-
-// ##################################################################
-// ############################ SUN #################################
-// ##################################################################
-
-.sun {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: $sun-size;
-	height: $sun-size;
-	background-color: $sun-color;
-	box-shadow: inset $sun-shadow-size -#{$sun-shadow-size} 0px 0px $sun-shadow;
-	transform: translate(-50%, -50%);
 }
