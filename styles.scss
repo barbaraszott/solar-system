@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'orbits';
+@import 'planets-moons';
 
 // ##################################################################
 // ####################### GENERAL STYLES ###########################
@@ -49,73 +50,4 @@ body {
 	background-color: $sun-color;
 	box-shadow: inset $sun-shadow-size -#{$sun-shadow-size} 0px 0px $sun-shadow;
 	transform: translate(-50%, -50%);
-}
-
-// ##################################################################
-// #################### PLANETS AND MOONS ###########################
-// ##################################################################
-
-.planet {
-	position: relative;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-$planets: (
-	'mercury': (
-		planetSize: $mercury-size,
-		backgroundColor: $mercury-color,
-		shadowColor: $mercury-shadow
-	),
-	'venus': (
-		planetSize: $venus-size,
-		backgroundColor: $venus-color,
-		shadowColor: $venus-shadow
-	),
-	'earth': (
-		planetSize: $earth-size,
-		backgroundColor: $earth-color,
-		shadowColor: $earth-shadow
-	),
-	'mars': (
-		planetSize: $mars-size,
-		backgroundColor: $mars-color,
-		shadowColor: $mars-shadow
-	),
-	'jupiter': (
-		planetSize: $jupiter-size,
-		backgroundColor: $jupiter-color,
-		shadowColor: $jupiter-shadow
-	),
-	'saturn': (
-		planetSize: $saturn-size,
-		backgroundColor: $saturn-color,
-		shadowColor: $saturn-shadow
-	),
-	'uranus': (
-		planetSize: $uranus-size,
-		backgroundColor: $uranus-color,
-		shadowColor: $uranus-shadow
-	),
-	'neptune': (
-		planetSize: $neptune-size,
-		backgroundColor: $neptune-color,
-		shadowColor: $neptune-shadow
-	)
-);
-
-@each $name, $planet in $planets {
-	.planet--#{$name} {
-		width: map-get($planet, planetSize);
-		height: map-get($planet, planetSize);
-		background-color: map-get($planet, backgroundColor);
-		box-shadow: inset 0px #{map-get($planet, planetSize) / 5} 0px 0px map-get($planet, shadowColor);
-	}
-}
-
-.moon {
-	width: $moon-size;
-	height: $moon-size;
-	background-color: $moon-color;
-	transform: translate(50%, 50%);
 }
