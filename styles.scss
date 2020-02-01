@@ -8,17 +8,32 @@ $mercury-color: #f7c896;
 $venus-color: #f5b14f;
 $earth-color: #4983f8;
 $moon-color: #bdc5d0;
+$mars-color: #f36e4b;
+$jupiter-color: #eb8d4f;
+$saturn-color: #f4d3ae;
+$uranus-color: #88d2d9;
+$neptune-color: #1860f2;
 
 $sun-size: 70px;
 $mercury-size: 10px;
 $venus-size: 24px;
 $earth-size: 25px;
 $moon-size: 7px;
+$mars-size: 15px;
+$jupiter-size: 70px;
+$saturn-size: 60px;
+$uranus-size: 26px;
+$neptune-size: 25px;
 
 $orbit-mercury-size: 120px;
 $orbit-venus-size: 175px;
 $orbit-earth-size: 250px;
 $orbit-moon-size: 50px;
+$orbit-mars-size: 335px;
+$orbit-jupiter-size: 595px;
+$orbit-saturn-size: 770px;
+$orbit-uranus-size: 910px;
+$orbit-neptune-size: 1100px;
 
 // ##################################################################
 // ####################### GENERAL STYLES ###########################
@@ -43,6 +58,7 @@ body {
 	position: absolute;
 	width: 100%;
 	height: 100%;
+	transform: scale(0.5);
 }
 
 .sun,
@@ -71,6 +87,16 @@ $orbits: (
 	"earth" : (width: $orbit-earth-size, height: $orbit-earth-size, marginTop: -$orbit-earth-size / 2, marginLeft: -$orbit-earth-size /
 				2),
 	"moon" : (width: $orbit-moon-size, height: $orbit-moon-size, marginTop: -$orbit-moon-size / 2, marginLeft: -$orbit-moon-size /
+				2),
+	"mars" : (width: $orbit-mars-size, height: $orbit-mars-size, marginTop: -$orbit-mars-size / 2, marginLeft: -$orbit-mars-size /
+				2),
+	"jupiter" : (width: $orbit-jupiter-size, height: $orbit-jupiter-size, marginTop: -$orbit-jupiter-size / 2, marginLeft: -$orbit-jupiter-size /
+				2),
+	"saturn" : (width: $orbit-saturn-size, height: $orbit-saturn-size, marginTop: -$orbit-saturn-size / 2, marginLeft: -$orbit-saturn-size /
+				2),
+	"uranus" : (width: $orbit-uranus-size, height: $orbit-uranus-size, marginTop: -$orbit-uranus-size / 2, marginLeft: -$orbit-uranus-size /
+				2),
+	"neptune" : (width: $orbit-neptune-size, height: $orbit-neptune-size, marginTop: -$orbit-neptune-size / 2, marginLeft: -$orbit-neptune-size /
 				2)
 );
 
@@ -110,7 +136,12 @@ $orbits: (
 $planets: (
 	"mercury": (width: $mercury-size, height: $mercury-size, backgroundColor: $mercury-color),
 	"venus": (width: $venus-size, height: $venus-size, backgroundColor: $venus-color),
-	"earth": (width: $earth-size, height: $earth-size, backgroundColor: $earth-color)
+	"earth": (width: $earth-size, height: $earth-size, backgroundColor: $earth-color),
+	"mars": (width: $mars-size, height: $mars-size, backgroundColor: $mars-color),
+	"jupiter": (width: $jupiter-size, height: $jupiter-size, backgroundColor: $jupiter-color),
+	"saturn": (width: $saturn-size, height: $saturn-size, backgroundColor: $saturn-color),
+	"uranus": (width: $uranus-size, height: $uranus-size, backgroundColor: $uranus-color),
+	"neptune": (width: $neptune-size, height: $neptune-size, backgroundColor: $neptune-color)
 );
 
 @each $name, $planet in $planets {
