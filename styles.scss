@@ -65,9 +65,11 @@ $orbital-period-neptune: 2473.5s; // 60 189 days
 	box-sizing: border-box;
 }
 
+html,
 body {
 	margin: 0;
 	height: 100vh;
+	overflow: hidden;
 }
 
 .space {
