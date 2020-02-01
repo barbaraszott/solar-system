@@ -4,13 +4,19 @@
 
 $space-color: #18171f;
 $sun-color: #fdb513;
+$mercury-color: #f7c896;
+$venus-color: #f5b14f;
 $earth-color: #4983f8;
 $moon-color: #bdc5d0;
 
 $sun-size: 70px;
+$mercury-size: 10px;
+$venus-size: 24px;
 $earth-size: 25px;
 $moon-size: 7px;
 
+$orbit-mercury-size: 120px;
+$orbit-venus-size: 175px;
 $orbit-earth-size: 250px;
 $orbit-moon-size: 50px;
 
@@ -58,6 +64,10 @@ body {
 }
 
 $orbits: (
+	"mercury" : (width: $orbit-mercury-size, height: $orbit-mercury-size, marginTop: -$orbit-mercury-size / 2, marginLeft: -$orbit-mercury-size /
+				2),
+	"venus" : (width: $orbit-venus-size, height: $orbit-venus-size, marginTop: -$orbit-venus-size / 2, marginLeft: -$orbit-venus-size /
+				2),
 	"earth" : (width: $orbit-earth-size, height: $orbit-earth-size, marginTop: -$orbit-earth-size / 2, marginLeft: -$orbit-earth-size /
 				2),
 	"moon" : (width: $orbit-moon-size, height: $orbit-moon-size, marginTop: -$orbit-moon-size / 2, marginLeft: -$orbit-moon-size /
@@ -97,7 +107,11 @@ $orbits: (
 	transform: translate(-50%, -50%);
 }
 
-$planets: ("earth": (width: $earth-size, height: $earth-size, backgroundColor: $earth-color));
+$planets: (
+	"mercury": (width: $mercury-size, height: $mercury-size, backgroundColor: $mercury-color),
+	"venus": (width: $venus-size, height: $venus-size, backgroundColor: $venus-color),
+	"earth": (width: $earth-size, height: $earth-size, backgroundColor: $earth-color)
+);
 
 @each $name, $planet in $planets {
 	.planet--#{$name} {
