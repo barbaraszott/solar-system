@@ -14,6 +14,7 @@ $saturn-color: #f4d3ae;
 $uranus-color: #88d2d9;
 $neptune-color: #1860f2;
 
+$sun-shadow-size: 10px;
 $sun-size: 70px;
 $mercury-size: 10px;
 $venus-size: 24px;
@@ -158,6 +159,7 @@ $orbits: (
 	width: $sun-size;
 	height: $sun-size;
 	background-color: $sun-color;
+	box-shadow: inset $sun-shadow-size -#{$sun-shadow-size} 0px 0px $sun-shadow;
 	transform: translate(-50%, -50%);
 }
 
