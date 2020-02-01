@@ -189,35 +189,43 @@ $orbits: (
 $planets: (
 	'mercury': (
 		planetSize: $mercury-size,
-		backgroundColor: $mercury-color
+		backgroundColor: $mercury-color,
+		shadowColor: $mercury-shadow
 	),
 	'venus': (
 		planetSize: $venus-size,
-		backgroundColor: $venus-color
+		backgroundColor: $venus-color,
+		shadowColor: $venus-shadow
 	),
 	'earth': (
 		planetSize: $earth-size,
-		backgroundColor: $earth-color
+		backgroundColor: $earth-color,
+		shadowColor: $earth-shadow
 	),
 	'mars': (
 		planetSize: $mars-size,
-		backgroundColor: $mars-color
+		backgroundColor: $mars-color,
+		shadowColor: $mars-shadow
 	),
 	'jupiter': (
 		planetSize: $jupiter-size,
-		backgroundColor: $jupiter-color
+		backgroundColor: $jupiter-color,
+		shadowColor: $jupiter-shadow
 	),
 	'saturn': (
 		planetSize: $saturn-size,
-		backgroundColor: $saturn-color
+		backgroundColor: $saturn-color,
+		shadowColor: $saturn-shadow
 	),
 	'uranus': (
 		planetSize: $uranus-size,
-		backgroundColor: $uranus-color
+		backgroundColor: $uranus-color,
+		shadowColor: $uranus-shadow
 	),
 	'neptune': (
 		planetSize: $neptune-size,
-		backgroundColor: $neptune-color
+		backgroundColor: $neptune-color,
+		shadowColor: $neptune-shadow
 	)
 );
 
