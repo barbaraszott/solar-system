@@ -1,0 +1,56 @@
+$space-color: #18171f;
+$space-color-light: #1b2735;
+$space-color-dark: #090a0f;
+$sun-color: #fdb513;
+$mercury-color: #f7c896;
+$venus-color: #f5b14f;
+$earth-color: #4983f8;
+$moon-color: #bdc5d0;
+$mars-color: #f36e4b;
+$jupiter-color: #eb8d4f;
+$saturn-color: #f4d3ae;
+$uranus-color: #88d2d9;
+$neptune-color: #1860f2;
+
+$sun-shadow: #df8028;
+$mercury-shadow: #ed9d8f;
+$venus-shadow: #f0853e;
+$earth-shadow: #3d6ac1;
+$mars-shadow: #e54848;
+$jupiter-shadow: #f2a252;
+$saturn-shadow: #e78b78;
+$uranus-shadow: #4da7a2;
+$neptune-shadow: #1936f0;
+
+$sun-shadow-size: 10px;
+
+$sun-size: 70px;
+$mercury-size: 10px;
+$venus-size: 24px;
+$earth-size: 25px;
+$moon-size: 7px;
+$mars-size: 15px;
+$jupiter-size: 70px;
+$saturn-size: 60px;
+$uranus-size: 26px;
+$neptune-size: 25px;
+
+$orbit-mercury-size: 120px;
+$orbit-venus-size: 175px;
+$orbit-earth-size: 250px;
+$orbit-moon-size: 50px;
+$orbit-mars-size: 335px;
+$orbit-jupiter-size: 595px;
+$orbit-saturn-size: 770px;
+$orbit-uranus-size: 910px;
+$orbit-neptune-size: 1100px;
+
+$orbital-period-mercury: 3.6s; // 88 days
+$orbital-period-venus: 9.2s; // 225 days
+$orbital-period-earth: 15s; // 365 days
+$orbital-period-moon: 1.2s; // 28 days
+$orbital-period-mars: 28.2s; // 687 days
+$orbital-period-jupiter: 178s; // 4333 days
+$orbital-period-saturn: 442s; // 10 759 days
+$orbital-period-uranus: 1261s; // 30 685 days
+$orbital-period-neptune: 2473.5s; // 60 189 days
