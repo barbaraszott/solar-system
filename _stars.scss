@@ -1,3 +1,5 @@
+$colors-stars-blinking: '#fff', 'transparent';
+
 @function create-stars-with-box-shadow($starsCount) {
 	$box-shadow: ();
 	@for $i from 1 to $starsCount {
@@ -19,15 +21,68 @@ $box-shadow--stars-small: create-stars-with-box-shadow(900);
 	height: 4px;
 	width: 4px;
 	box-shadow: $box-shadow--stars-large;
+	animation: blink-large 7s infinite;
 }
 .stars--medium {
 	height: 2px;
 	width: 2px;
 	box-shadow: $box-shadow--stars-medium;
+	animation: blink-medium 5s infinite;
 }
 .stars--small {
 	height: 1px;
 	width: 1px;
 	box-shadow: $box-shadow--stars-small;
+	animation: blink-small 3s infinite;
 }
 
+@keyframes blink-large {
+	0% {
+		box-shadow: $box-shadow--stars-large;
+	}
+	70% {
+		$stars: $box-shadow--stars-large;
+		@for $i from 1 to length($stars) {
+			$star: set-nth(nth($stars, $i), 3, unquote(nth($colors-stars-blinking, random(length($colors-stars-blinking)))));
+			$stars: set-nth($stars, $i, $star);
+		}
+		box-shadow: $stars;
+	}
+	100% {
+		box-shadow: $box-shadow--stars-large;
+	}
+}
+
+@keyframes blink-medium {
+	0% {
+		box-shadow: $box-shadow--stars-medium;
+	}
+	70% {
+		$stars: $box-shadow--stars-medium;
+		@for $i from 1 to length($stars) {
+			$star: set-nth(nth($stars, $i), 3, unquote(nth($colors-stars-blinking, random(length($colors-stars-blinking)))));
+			$stars: set-nth($stars, $i, $star);
+		}
+		box-shadow: $stars;
+	}
+	100% {
+		box-shadow: $box-shadow--stars-medium;
+	}
+}
+
+@keyframes blink-small {
+	0% {
+		box-shadow: $box-shadow--stars-small;
+	}
+	70% {
+		$stars: $box-shadow--stars-small;
+		@for $i from 1 to length($stars) {
+			$star: set-nth(nth($stars, $i), 3, unquote(nth($colors-stars-blinking, random(length($colors-stars-blinking)))));
+			$stars: set-nth($stars, $i, $star);
+		}
+		box-shadow: $stars;
+	}
+	100% {
+		box-shadow: $box-shadow--stars-small;
+	}
+}
