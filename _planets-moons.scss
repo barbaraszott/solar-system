@@ -62,3 +62,11 @@ $planets: (
 		box-shadow: inset 0px #{map-get($planet, planetSize) / 5} 0px 0px map-get($planet, shadowColor);
 	}
 }
+
+.planet--jupiter {
+	box-shadow: inset -1px 36px 0 -25px $jupiter-color, inset -1px 53px 0 -31px $jupiter-stripes-color,
+		inset -1px 62px 0 -35px $jupiter-color, inset -1px 71px 0 -30px $jupiter-stripes-color,
+		inset 0px 77px 0 -24px $jupiter-color, inset -1px 80px 0 -17px $jupiter-stripes-color,
+		inset 0px 0 0 -24px $jupiter-color;
+}
+
