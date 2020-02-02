@@ -9,3 +9,9 @@
 $box-shadow--stars-large: create-stars-with-box-shadow(50);
 $box-shadow--stars-medium: create-stars-with-box-shadow(150);
 $box-shadow--stars-small: create-stars-with-box-shadow(900);
+
+.stars {
+	border-radius: 50%;
+	background: transparent;
+}
+
