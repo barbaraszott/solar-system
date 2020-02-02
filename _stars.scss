@@ -1,0 +1,11 @@
+@function create-stars-with-box-shadow($starsCount) {
+	$box-shadow: ();
+	@for $i from 1 to $starsCount {
+		$box-shadow: append($box-shadow, (random(2000) + 0px) (random(2000) + 0px) #fff, comma);
+	}
+	@return unquote($box-shadow);
+}
+
+$box-shadow--stars-large: create-stars-with-box-shadow(50);
+$box-shadow--stars-medium: create-stars-with-box-shadow(150);
+$box-shadow--stars-small: create-stars-with-box-shadow(900);
