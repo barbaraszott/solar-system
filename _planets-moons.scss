@@ -91,26 +91,19 @@ $planets: (
 .saturn-rings::after,
 .saturn-rings::before {
 	content: '';
+	width: $saturn-size * 1.5;
+	height: $saturn-size * 0.75;
 	position: absolute;
 	left: 50%;
 	top: 0%;
-	width: $saturn-size * 1.5;
-	height: $saturn-size * 0.75;
+	border: solid 4px transparent;
 	border-radius: 100px / 50px;
-	border-style: solid;
-	border-width: 4px;
 	transform: translate(-50%, -50%) rotate3d(4, 1, 1, 40deg);
 }
 
 .saturn-rings::before {
-	border-color: $saturn-ring-color-dark;
-	border-bottom-color: transparent;
-	border-right-color: transparent;
 	z-index: -1;
 }
 
 .saturn-rings::after {
-	border-color: $saturn-ring-color-light;
-	border-top-color: transparent;
-	border-left-color: transparent;
 }
