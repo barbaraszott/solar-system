@@ -34,13 +34,11 @@ $planets: (
 	),
 	'jupiter': (
 		planetSize: $jupiter-size,
-		backgroundColor: $jupiter-color,
-		shadowColor: $jupiter-shadow
+		backgroundColor: $jupiter-color
 	),
 	'saturn': (
 		planetSize: $saturn-size,
-		backgroundColor: $saturn-color,
-		shadowColor: $saturn-shadow
+		backgroundColor: $saturn-color
 	),
 	'uranus': (
 		planetSize: $uranus-size,
@@ -59,7 +57,10 @@ $planets: (
 		width: map-get($planet, planetSize);
 		height: map-get($planet, planetSize);
 		background-color: map-get($planet, backgroundColor);
-		box-shadow: inset 0px #{map-get($planet, planetSize) / 5} 0px 0px map-get($planet, shadowColor);
+
+		@if ($name != 'saturn' && $name != 'jupiter') {
+			box-shadow: inset 0px #{map-get($planet, planetSize) / 5} 0px 0px map-get($planet, shadowColor);
+		}
 	}
 }
 
