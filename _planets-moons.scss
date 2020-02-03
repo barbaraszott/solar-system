@@ -82,3 +82,9 @@ $planets: (
 	background-color: #ec7d4e;
 	transform: rotate(9deg);
 }
+
+.saturn-rings {
+	position: relative;
+	z-index: 1;
+}
+
