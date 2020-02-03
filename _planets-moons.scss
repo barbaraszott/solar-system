@@ -101,3 +101,16 @@ $planets: (
 	border-width: 4px;
 	transform: translate(-50%, -50%) rotate3d(1, 1, 1, 40deg);
 }
+
+.saturn-rings::before {
+	border-color: $saturn-ring-color-dark;
+	border-bottom-color: transparent;
+	border-right-color: transparent;
+	z-index: -1;
+}
+
+.saturn-rings::after {
+	border-color: $saturn-ring-color-light;
+	border-top-color: transparent;
+	border-left-color: transparent;
+}
