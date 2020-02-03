@@ -110,3 +110,10 @@ $planets: (
 	box-shadow: -11px 4px 0px 2px $saturn-ring-outer, 9px 5px 0px 3px $saturn-ring-outer,
 		inset 2px -6px 0px 1px $saturn-ring-inner;
 }
+
+.planet--saturn {
+	box-shadow: inset 9px -28px 0px -21px $saturn-stripe-light, inset 9px -31px 0px -21px $saturn-stripe-dark,
+		inset 9px -36px 0px -21px $saturn-color, inset 9px -46px 0px -21px $saturn-stripe-light,
+		inset 9px -49px 0px -21px $saturn-stripe-dark, inset 9px -61px 0px -21px $saturn-color,
+		inset 9px -71px 0px -21px $saturn-stripe-light, inset 9px -74px 0px -21px $saturn-stripe-dark;
+}
