@@ -103,7 +103,10 @@ $planets: (
 
 .saturn-rings::before {
 	z-index: -1;
+	box-shadow: inset 0px 3px 2px 3px $saturn-ring-inner; // inner ring behind the planet
 }
 
 .saturn-rings::after {
+	box-shadow: -11px 4px 0px 2px $saturn-ring-outer, 9px 5px 0px 3px $saturn-ring-outer,
+		inset 2px -6px 0px 1px $saturn-ring-inner;
 }
