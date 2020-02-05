@@ -1,0 +1,19 @@
+.planet--jupiter {
+	box-shadow: inset -1px 36px 0 -25px $jupiter-color, inset -1px 53px 0 -31px $jupiter-stripes-color,
+		inset -1px 62px 0 -35px $jupiter-color, inset -1px 71px 0 -30px $jupiter-stripes-color,
+		inset 0px 77px 0 -24px $jupiter-color, inset -1px 80px 0 -17px $jupiter-stripes-color,
+		inset 0px 0 0 -24px $jupiter-color;
+}
+
+.planet--jupiter::after {
+	content: '';
+	width: 20px;
+	height: 10px;
+	position: absolute;
+	top: 27%;
+	left: 48%;
+	border: 2px solid $jupiter-color;
+	border-radius: 50%;
+	background-color: #ec7d4e;
+	transform: rotate(9deg);
+}
