@@ -43,15 +43,31 @@ $orbit-saturn-size: 770px;
 $orbit-uranus-size: 910px;
 $orbit-neptune-size: 1100px;
 
-$orbital-period-mercury: 3.6s; // 88 days
-$orbital-period-venus: 9.2s; // 225 days
-$orbital-period-earth: 15s; // 365 days
-$orbital-period-moon: 1.2s; // 28 days
-$orbital-period-mars: 28.2s; // 687 days
-$orbital-period-jupiter: 178s; // 4333 days
-$orbital-period-saturn: 442s; // 10 759 days
-$orbital-period-uranus: 1261s; // 30 685 days
-$orbital-period-neptune: 2473.5s; // 60 189 days
+$earth-revolution-days: 365.25;
+$mercury-revolution-days: 88;
+$venus-revolution-days: 225;
+$moon-revolution-days: 28;
+$mars-revolution-days: 687;
+$jupiter-revolution-days: 4333;
+$saturn-revolution-days: 10759;
+$uranus-revolution-days: 30685;
+$neptune-revolution-days: 60189;
+
+$year-in-seconds: 15s; // one orbital period for Earth - 15s in animation
+
+@function calculate-orbital-period($planet-year-in-earth-days) {
+	@return $year-in-seconds * $planet-year-in-earth-days / $earth-revolution-days + 0s;
+}
+
+$orbital-period-mercury: calculate-orbital-period($mercury-revolution-days);
+$orbital-period-venus: calculate-orbital-period($venus-revolution-days);
+$orbital-period-earth: calculate-orbital-period($earth-revolution-days);
+$orbital-period-moon: calculate-orbital-period($moon-revolution-days);
+$orbital-period-mars: calculate-orbital-period($mars-revolution-days);
+$orbital-period-jupiter: calculate-orbital-period($jupiter-revolution-days);
+$orbital-period-saturn: calculate-orbital-period($saturn-revolution-days);
+$orbital-period-uranus: calculate-orbital-period($uranus-revolution-days);
+$orbital-period-neptune: calculate-orbital-period($neptune-revolution-days);
 
 $jupiter-stripes-color: #f1a67b;
 $jupiter-great-red-spot-color: #ec7d4e;
