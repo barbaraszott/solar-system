@@ -61,7 +61,7 @@ $planets: (
 		height: map-get($planet, planetSize);
 		background-color: map-get($planet, backgroundColor);
 
-		@if ($name != 'saturn' && $name != 'jupiter') {
+		@if ($name != 'saturn' and $name != 'jupiter') {
 			box-shadow: inset 0px #{map-get($planet, planetSize) / 5} 0px 0px map-get($planet, shadowColor);
 		}
 	}
