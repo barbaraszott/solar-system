@@ -31,7 +31,7 @@ body {
 	height: 100%;
 	transform: scale(0.5);
 	&--3d {
-		transform: scale(0.5) rotateX(75deg);
+		transform: scale(1) rotateX(75deg);
 		transform-style: preserve-3d;
 	}
 }
