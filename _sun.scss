@@ -9,3 +9,7 @@
 	background-color: $sun-color;
 	box-shadow: inset $sun-shadow-size -#{$sun-shadow-size} 0px 0px $sun-shadow;
 }
+
+.solar-system--3d .sun {
+	transform: rotateX(-90deg);
+}
