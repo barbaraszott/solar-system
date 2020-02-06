@@ -2,9 +2,10 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	margin-top: -$sun-size/2;
+	margin-left: -$sun-size/2;
 	width: $sun-size;
 	height: $sun-size;
 	background-color: $sun-color;
 	box-shadow: inset $sun-shadow-size -#{$sun-shadow-size} 0px 0px $sun-shadow;
-	transform: translate(-50%, -50%);
 }

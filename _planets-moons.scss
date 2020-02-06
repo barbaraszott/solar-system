@@ -5,13 +5,13 @@
 	width: $moon-size;
 	height: $moon-size;
 	background-color: $moon-color;
-	transform: translate(50%, 50%);
+	margin-top: -$moon-size / 2;
+	margin-left: -$moon-size / 2;
 }
 
 .planet {
 	position: relative;
 	left: 50%;
-	transform: translate(-50%, -50%);
 }
 
 $planets: (
@@ -59,6 +59,8 @@ $planets: (
 	.planet--#{$name} {
 		width: map-get($planet, planetSize);
 		height: map-get($planet, planetSize);
+		margin-top: -#{map-get($planet, planetSize) / 2};
+		margin-left: -#{map-get($planet, planetSize) / 2};
 		background-color: map-get($planet, backgroundColor);
 
 		@if ($name != 'saturn' and $name != 'jupiter') {
