@@ -1,96 +1,109 @@
-@import 'jupiter';
-@import 'saturn';
+@import "jupiter";
+@import "saturn";
 
 .moon {
-	width: $moon-size;
-	height: $moon-size;
-	background-color: $moon-color;
-	margin-top: -$moon-size / 2;
-	margin-left: -$moon-size / 2;
+  width: $moon-size;
+  height: $moon-size;
+  background-color: $moon-color;
+  margin-top: -$moon-size / 2;
+  margin-left: -$moon-size / 2;
 }
 
 .planet {
-	position: relative;
-	left: 50%;
+  position: relative;
+  left: 50%;
 }
 
-.solar-system--3d .planet {
-	animation-name: animate--planet;
-	transform-style: preserve-3d;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
+.solar-system--3d {
+  & .planet,
+  & .moon {
+    animation-name: animate--planet;
+    transform-style: preserve-3d;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  & .moon {
+    animation-duration: $orbital-period-moon;
+  }
 }
 
 $planets: (
-	'mercury': (
-		planetSize: $mercury-size,
-		backgroundColor: $mercury-color,
-		shadowColor: $mercury-shadow,
-		animationDuration: $orbital-period-mercury
-	),
-	'venus': (
-		planetSize: $venus-size,
-		backgroundColor: $venus-color,
-		shadowColor: $venus-shadow,
-		animationDuration: $orbital-period-venus
-	),
-	'earth': (
-		planetSize: $earth-size,
-		backgroundColor: $earth-color,
-		shadowColor: $earth-shadow,
-		animationDuration: $orbital-period-earth
-	),
-	'mars': (
-		planetSize: $mars-size,
-		backgroundColor: $mars-color,
-		shadowColor: $mars-shadow,
-		animationDuration: $orbital-period-mars
-	),
-	'jupiter': (
-		planetSize: $jupiter-size,
-		backgroundColor: $jupiter-color,
-		animationDuration: $orbital-period-jupiter
-	),
-	'saturn': (
-		planetSize: $saturn-size,
-		backgroundColor: $saturn-color,
-		animationDuration: $orbital-period-saturn
-	),
-	'uranus': (
-		planetSize: $uranus-size,
-		backgroundColor: $uranus-color,
-		shadowColor: $uranus-shadow,
-		animationDuration: $orbital-period-uranus
-	),
-	'neptune': (
-		planetSize: $neptune-size,
-		backgroundColor: $neptune-color,
-		shadowColor: $neptune-shadow,
-		animationDuration: $orbital-period-neptune
-	)
+  "mercury": (
+    planetSize: $mercury-size,
+    backgroundColor: $mercury-color,
+    shadowColor: $mercury-shadow,
+    animationDuration: $orbital-period-mercury
+  ),
+  "venus": (
+    planetSize: $venus-size,
+    backgroundColor: $venus-color,
+    shadowColor: $venus-shadow,
+    animationDuration: $orbital-period-venus
+  ),
+  "earth": (
+    planetSize: $earth-size,
+    backgroundColor: $earth-color,
+    shadowColor: $earth-shadow,
+    animationDuration: $orbital-period-earth
+  ),
+  "mars": (
+    planetSize: $mars-size,
+    backgroundColor: $mars-color,
+    shadowColor: $mars-shadow,
+    animationDuration: $orbital-period-mars
+  ),
+  "jupiter": (
+    planetSize: $jupiter-size,
+    backgroundColor: $jupiter-color,
+    animationDuration: $orbital-period-jupiter
+  ),
+  "saturn": (
+    planetSize: $saturn-size,
+    backgroundColor: $saturn-color,
+    animationDuration: $orbital-period-saturn
+  ),
+  "uranus": (
+    planetSize: $uranus-size,
+    backgroundColor: $uranus-color,
+    shadowColor: $uranus-shadow,
+    animationDuration: $orbital-period-uranus
+  ),
+  "neptune": (
+    planetSize: $neptune-size,
+    backgroundColor: $neptune-color,
+    shadowColor: $neptune-shadow,
+    animationDuration: $orbital-period-neptune
+  )
 );
 
 @each $name, $planet in $planets {
-	.planet--#{$name} {
-		width: map-get($planet, planetSize);
-		height: map-get($planet, planetSize);
-		margin-top: -#{map-get($planet, planetSize) / 2};
-		margin-left: -#{map-get($planet, planetSize) / 2};
-		background-color: map-get($planet, backgroundColor);
-		animation-duration: map-get($planet, animationDuration);
+  .planet--#{$name} {
+    width: map-get($planet, planetSize);
+    height: map-get($planet, planetSize);
+    margin-top: -#{map-get($planet, planetSize) / 2};
+    margin-left: -#{map-get($planet, planetSize) / 2};
+    background-color: map-get($planet, backgroundColor);
+    animation-duration: map-get($planet, animationDuration);
 
-		@if ($name != 'saturn' and $name != 'jupiter') {
-			box-shadow: inset 0px #{map-get($planet, planetSize) / 5} 0px 0px map-get($planet, shadowColor);
-		}
-	}
+    @if ($name != "saturn" and $name != "jupiter") {
+      box-shadow: inset
+        0px
+        #{map-get($planet, planetSize) /
+        5}
+        0px
+        0px
+        map-get($planet, shadowColor);
+    }
+  }
 }
 
 @keyframes animate--planet {
-	0% {
-		transform: rotateX(-90deg) rotateY(360deg) rotateZ(0deg);
-	}
+  0% {
+    transform: rotateX(-90deg) rotateY(360deg) rotateZ(360deg);
+  }
 
-	100% {
-		transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
-	}
+  100% {
+    transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+  }
 }
