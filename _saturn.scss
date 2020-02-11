@@ -1,52 +1,58 @@
 .saturn-rings {
-	position: relative;
-	z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .saturn-rings::after,
 .saturn-rings::before {
-	content: '';
-	width: $saturn-size * 1.5;
-	height: $saturn-size * 0.75;
-	position: absolute;
-	left: 50%;
-	top: 0%;
-	border: solid 4px transparent;
-	border-radius: 100px / 50px;
+  content: "";
+  width: $saturn-size * 1.5;
+  height: $saturn-size * 0.75;
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  border: solid 4px transparent;
+  border-radius: 100px / 50px;
+  transform: translate(-50%);
 }
 
 .saturn-rings::before {
-	z-index: -1;
-	box-shadow: inset 0px 3px 2px 3px $saturn-ring-inner; // inner ring behind the planet
+  z-index: -1;
+  box-shadow: inset 0px 3px 2px 3px $saturn-ring-inner; // inner ring behind the planet
 }
 
 .saturn-rings::after {
-	box-shadow: -11px 4px 0px 2px $saturn-ring-outer, 9px 5px 0px 3px $saturn-ring-outer,
-		inset 2px -6px 0px 1px $saturn-ring-inner;
+  box-shadow: -11px 4px 0px 2px $saturn-ring-outer,
+    9px 5px 0px 3px $saturn-ring-outer,
+    inset 2px -6px 0px 1px $saturn-ring-inner;
 }
 
 .planet--saturn {
-	box-shadow: inset 9px -28px 0px -21px $saturn-stripe-light, inset 9px -31px 0px -21px $saturn-stripe-dark,
-		inset 9px -36px 0px -21px $saturn-color, inset 9px -46px 0px -21px $saturn-stripe-light,
-		inset 9px -49px 0px -21px $saturn-stripe-dark, inset 9px -61px 0px -21px $saturn-color,
-		inset 9px -71px 0px -21px $saturn-stripe-light, inset 9px -74px 0px -21px $saturn-stripe-dark;
+  box-shadow: inset 9px -28px 0px -21px $saturn-stripe-light,
+    inset 9px -31px 0px -21px $saturn-stripe-dark,
+    inset 9px -36px 0px -21px $saturn-color,
+    inset 9px -46px 0px -21px $saturn-stripe-light,
+    inset 9px -49px 0px -21px $saturn-stripe-dark,
+    inset 9px -61px 0px -21px $saturn-color,
+    inset 9px -71px 0px -21px $saturn-stripe-light,
+    inset 9px -74px 0px -21px $saturn-stripe-dark;
 }
 
 .solar-system--3d {
-	& .saturn-rings::after,
-	& .saturn-rings::before {
-		top: 50%;
-		width: $saturn-size * 1.5;
-		height: $saturn-size * 1.5;
-		border-radius: 50%;
-		transform: translate(-50%, -50%);
-	}
+  & .saturn-rings::after,
+  & .saturn-rings::before {
+    top: 50%;
+    width: $saturn-size * 1.5;
+    height: $saturn-size * 1.5;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-	& .saturn-rings::before {
-		box-shadow: inset 0px 0px 0px 8px $saturn-ring-inner;
-	}
+  & .saturn-rings::before {
+    box-shadow: inset 0px 0px 0px 8px $saturn-ring-inner;
+  }
 
-	& .saturn-rings::after {
-		box-shadow: 0px 0px 0px 11px $saturn-ring-outer;
-	}
+  & .saturn-rings::after {
+    box-shadow: 0px 0px 0px 11px $saturn-ring-outer;
+  }
 }
