@@ -9,6 +9,10 @@
 	animation-iteration-count: infinite;
 }
 
+.solar-system--3d .orbit--moon {
+	animation-name: animate--suborbit;
+}
+
 .solar-system--3d .orbit {
 	border: solid 5px rgba(#fff, 0.1);
 	transform-style: preserve-3d;
@@ -83,5 +87,15 @@ $orbits: (
 
 	100% {
 		transform: rotateZ(-360deg);
+	}
+}
+
+@keyframes animate--suborbit {
+	0% {
+		transform: rotateX(90deg) rotateZ(0deg);
+	}
+
+	100% {
+		transform: rotateX(90deg) rotateZ(-360deg);
 	}
 }
