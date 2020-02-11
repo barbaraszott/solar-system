@@ -1,3 +1,39 @@
+@keyframes bright {
+	0% {
+		transform: translate(-50%, -50%) rotateZ(0);
+	}
+
+	100% {
+		transform: translate(-50%, -50%) rotateZ(360deg);
+	}
+}
+
+@function sunlight($color) {
+	$lights: ();
+	$shaft-spacing: 6;
+	$shaft-width: 3;
+	$temp: floor(360 / ($shaft-spacing + $shaft-width)) * 2;
+	$shafts: $temp;
+
+	@for $i from 0 through ($shafts - 1) {
+		@if $i % 2 == 0 {
+			// COLOR
+			$start: ($i / 2) * ($shaft-spacing + $shaft-width) + 0deg;
+			$end: ($start + $shaft-width);
+			$lights: append($lights, ($color $start $end), comma);
+		} @else {
+			// SPACE
+			$start: (round(($i - 1) / 2) * ($shaft-width + $shaft-spacing) + $shaft-width)+0deg;
+			$end: ($start + $shaft-spacing);
+			$lights: append($lights, (transparent $start $end), comma);
+		}
+	}
+
+	@return unquote($lights);
+}
+
+$sunlights: sunlight(white);
+
 .sun {
 	position: absolute;
 	top: 50%;
@@ -12,4 +48,39 @@
 
 .solar-system--3d .sun {
 	transform: rotateX(-90deg);
+}
+
+.sun.shining {
+	$rotation-speed: 1.5;
+	width: $sun-size;
+	height: $sun-size;
+	border: solid 10px transparent;
+	border-radius: 50%;
+	background-color: transparent;
+	background-image: linear-gradient(yellow, yellow), conic-gradient($sunlights);
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+	box-shadow: inset 0 0 0 5px #192432;
+	animation: bright ((30 / $rotation-speed) +0s) linear both;
+	animation-iteration-count: infinite;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 2;
+
+	// fallback for firefox, shame on ya mozilla :D
+	&:after {
+		content: '';
+		width: $sun-size - 50px;
+		height: $sun-size - 50px;
+		position: absolute;
+		border-radius: 50%;
+		background: yellow;
+		background-clip: content-box;
+		display: inline-block;
+		border: 5px dotted #ffff00;
+		padding: 3px;
+		box-sizing: content-box;
+	}
 }
