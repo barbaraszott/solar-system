@@ -40,7 +40,7 @@
   @return unquote($sunbeams);
 }
 
-$sunlights: sunlight(white);
+$sunlights: create-sunbeams($sun-shadow);
 
 .sun {
 	position: absolute;
