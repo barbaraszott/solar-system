@@ -43,52 +43,49 @@
 $sunlights: create-sunbeams($sun-shadow);
 
 .sun {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: -$sun-size/2;
-	margin-left: -$sun-size/2;
-	width: $sun-size;
-	height: $sun-size;
-	background-color: $sun-color;
-	box-shadow: inset $sun-shadow-size -#{$sun-shadow-size} 0px 0px $sun-shadow;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  margin-top: -$sun-size/2;
+  margin-left: -$sun-size/2;
+  width: $sun-size;
+  height: $sun-size;
+  background-color: transparent;
+  background-image: linear-gradient($sun-color, $sun-color),
+    conic-gradient($sunlights);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: inset 0 0 0 5px $space-color-light,
+    inset $sun-shadow-size -#{$sun-shadow-size} 0px 0px $sun-shadow;
+  border: solid 5px transparent;
+
+  animation: animate--sun $sunbeams-rotation-speed linear;
+  animation-iteration-count: infinite;
+
+  // fallback for firefox, shame on ya mozilla :d
+  &:after {
+    content: "";
+    width: $sun-size - 50px;
+    height: $sun-size - 50px;
+    position: absolute;
+    border-radius: 50%;
+    background: $sun-color;
+    background-clip: content-box;
+    display: inline-block;
+    border: 5px dotted $sun-color;
+    padding: 3px;
+    box-sizing: content-box;
+  }
 }
 
 .solar-system--3d .sun {
-	transform: rotateX(-90deg);
-}
-
-.sun.shining {
-	$rotation-speed: 1.5;
-	width: $sun-size;
-	height: $sun-size;
-	border: solid 10px transparent;
-	border-radius: 50%;
-	background-color: transparent;
-	background-image: linear-gradient(yellow, yellow), conic-gradient($sunlights);
-	background-origin: border-box;
-	background-clip: content-box, border-box;
-	box-shadow: inset 0 0 0 5px #192432;
-	animation: bright ((30 / $rotation-speed) +0s) linear both;
-	animation-iteration-count: infinite;
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 2;
-
-	// fallback for firefox, shame on ya mozilla :D
-	&:after {
-		content: '';
-		width: $sun-size - 50px;
-		height: $sun-size - 50px;
-		position: absolute;
-		border-radius: 50%;
-		background: yellow;
-		background-clip: content-box;
-		display: inline-block;
-		border: 5px dotted #ffff00;
-		padding: 3px;
-		box-sizing: content-box;
-	}
+  background-color: $sun-color;
+  background-image: none;
+  box-shadow: inset $sun-shadow-size -#{$sun-shadow-size} 0px 0px $sun-shadow;
+  border: none;
+  animation-name: none;
+  transform: rotateX(-90deg);
 }
