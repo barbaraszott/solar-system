@@ -1,11 +1,11 @@
-@keyframes bright {
-	0% {
-		transform: translate(-50%, -50%) rotateZ(0);
-	}
+@keyframes animate--sun {
+  0% {
+    transform: rotateZ(0);
+  }
 
-	100% {
-		transform: translate(-50%, -50%) rotateZ(360deg);
-	}
+  100% {
+    transform: rotateZ(360deg);
+  }
 }
 
 @function sunlight($color) {
