@@ -20,7 +20,7 @@ $mars-shadow: #e54848;
 $uranus-shadow: #4da7a2;
 $neptune-shadow: #1936f0;
 
-$sun-shadow-size: 10px;
+$sun-shadow-size: 8px;
 
 $sun-size: 80px;
 $mercury-size: 10px;
@@ -56,7 +56,8 @@ $neptune-revolution-days: 60189;
 $year-in-seconds: 15s; // one orbital period for Earth - 15s in animation
 
 @function calculate-orbital-period($planet-year-in-earth-days) {
-	@return $year-in-seconds * $planet-year-in-earth-days / $earth-revolution-days + 0s;
+  @return $year-in-seconds * $planet-year-in-earth-days / $earth-revolution-days +
+    0s;
 }
 
 $orbital-period-mercury: calculate-orbital-period($mercury-revolution-days);
@@ -68,6 +69,8 @@ $orbital-period-jupiter: calculate-orbital-period($jupiter-revolution-days);
 $orbital-period-saturn: calculate-orbital-period($saturn-revolution-days);
 $orbital-period-uranus: calculate-orbital-period($uranus-revolution-days);
 $orbital-period-neptune: calculate-orbital-period($neptune-revolution-days);
+
+$sunbeams-rotation-speed: 30s;
 
 $jupiter-stripes-color: #f1a67b;
 $jupiter-great-red-spot-color: #ec7d4e;
