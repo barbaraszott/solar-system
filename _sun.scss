@@ -8,28 +8,36 @@
   }
 }
 
-@function sunlight($color) {
-	$lights: ();
-	$shaft-spacing: 6;
-	$shaft-width: 3;
-	$temp: floor(360 / ($shaft-spacing + $shaft-width)) * 2;
-	$shafts: $temp;
+@function create-sunbeams($color) {
+  $sunbeams: ();
+  $sunbeams-spacing: 6;
+  $sunbeams-width: 3;
+  $sunbeams-count: floor(360 / ($sunbeams-spacing + $sunbeams-width)) * 2;
 
-	@for $i from 0 through ($shafts - 1) {
-		@if $i % 2 == 0 {
-			// COLOR
-			$start: ($i / 2) * ($shaft-spacing + $shaft-width) + 0deg;
-			$end: ($start + $shaft-width);
-			$lights: append($lights, ($color $start $end), comma);
-		} @else {
-			// SPACE
-			$start: (round(($i - 1) / 2) * ($shaft-width + $shaft-spacing) + $shaft-width)+0deg;
-			$end: ($start + $shaft-spacing);
-			$lights: append($lights, (transparent $start $end), comma);
-		}
-	}
+  @for $i from 0 through ($sunbeams-count - 1) {
+    @if $i % 2 == 0 {
+      // COLOR
+      $start-angle: ($i / 2) * ($sunbeams-spacing + $sunbeams-width) + 0deg;
+      $end-angle: ($start-angle + $sunbeams-width) + 0deg;
+      $sunbeams: append($sunbeams, ($color $start-angle $end-angle), comma);
+    } @else {
+      // SPACE (NO COLOR)
+      $start-angle: (
+          round(($i - 1) / 2) *
+            ($sunbeams-width + $sunbeams-spacing) +
+            $sunbeams-width
+        ) +
+        0deg;
+      $end-angle: ($start-angle + $sunbeams-spacing);
+      $sunbeams: append(
+        $sunbeams,
+        (transparent $start-angle $end-angle),
+        comma
+      );
+    }
+  }
 
-	@return unquote($lights);
+  @return unquote($sunbeams);
 }
 
 $sunlights: sunlight(white);
