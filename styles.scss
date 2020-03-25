@@ -3,7 +3,7 @@
 @import "orbits";
 @import "planets-moons";
 @import "stars";
-@import "options";
+@import "toggle3d";
 
 // ##################################################################
 // ####################### GENERAL STYLES ###########################
@@ -23,12 +23,7 @@ body {
 .space {
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle,
-    $space-color-light 0%,
-    $space-color-dark 37%,
-    black 85%
-  );
+  background: radial-gradient(circle, $space-color-light 0%, $space-color-dark 37%, black 85%);
 }
 
 .solar-system {

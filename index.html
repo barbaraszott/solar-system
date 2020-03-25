@@ -13,7 +13,14 @@
       <div class="stars stars--medium"></div>
       <div class="stars stars--large"></div>
 
-      <div class="solar-system solar-system--3d">
+      <form class="toggle-view__container" id="toggle-view">
+        <input type="radio" id="toggle-view--3d" class="toggle-view--3d" name="toggle-view" checked />
+        <label for="toggle-view--3d">Show in 3d</label>
+        <input type="radio" id="toggle-view--2d" class="toggle-view--2d" name="toggle-view" />
+        <label for="toggle-view--2d">Show in 2d</label>
+      </form>
+
+      <div id="solar-system" class="solar-system solar-system--3d">
         <div class="sun"></div>
 
         <div class="orbit orbit--mercury">
@@ -56,4 +63,5 @@
       </div>
     </div>
   </body>
+  <script src="toggleView.js"></script>
 </html>
