@@ -14,6 +14,8 @@
   border: solid 4px transparent;
   border-radius: 100px / 50px;
   transform: translate(-50%);
+
+  animation-name: animate-saturn-rings--3d, animate-saturn-rings--2d;
 }
 
 .saturn-rings::before {
@@ -22,20 +24,15 @@
 }
 
 .saturn-rings::after {
-  box-shadow: -11px 4px 0px 2px $saturn-ring-outer,
-    9px 5px 0px 3px $saturn-ring-outer,
+  box-shadow: -11px 4px 0px 2px $saturn-ring-outer, 9px 5px 0px 3px $saturn-ring-outer,
     inset 2px -6px 0px 1px $saturn-ring-inner;
 }
 
 .planet--saturn {
-  box-shadow: inset 9px -28px 0px -21px $saturn-stripe-light,
-    inset 9px -31px 0px -21px $saturn-stripe-dark,
-    inset 9px -36px 0px -21px $saturn-color,
-    inset 9px -46px 0px -21px $saturn-stripe-light,
-    inset 9px -49px 0px -21px $saturn-stripe-dark,
-    inset 9px -61px 0px -21px $saturn-color,
-    inset 9px -71px 0px -21px $saturn-stripe-light,
-    inset 9px -74px 0px -21px $saturn-stripe-dark;
+  box-shadow: inset 9px -28px 0px -21px $saturn-stripe-light, inset 9px -31px 0px -21px $saturn-stripe-dark,
+    inset 9px -36px 0px -21px $saturn-color, inset 9px -46px 0px -21px $saturn-stripe-light,
+    inset 9px -49px 0px -21px $saturn-stripe-dark, inset 9px -61px 0px -21px $saturn-color,
+    inset 9px -71px 0px -21px $saturn-stripe-light, inset 9px -74px 0px -21px $saturn-stripe-dark;
 }
 
 .solar-system--3d {
@@ -46,7 +43,7 @@
     height: $saturn-size * 1.5;
     border-radius: 50%;
 
-    animation-name: animate--saturn-rings;
+    animation-name: animate-saturn-rings--3d;
     animation-duration: $orbital-period-saturn;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -61,7 +58,13 @@
   }
 }
 
-@keyframes animate--saturn-rings {
+@keyframes animate-saturn-rings--2d {
+  0% {
+    transform: none;
+  }
+}
+
+@keyframes animate-saturn-rings--3d {
   0% {
     transform: translate(-50%, -50%) rotateX(0deg);
   }
