@@ -1,101 +1,101 @@
 .orbit {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	border: solid 2px rgba(#fff, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: solid 2px rgba(#fff, 0.2);
 
-	animation-name: animate--orbit;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
+  animation-name: animate-orbit;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 .solar-system--3d .orbit--moon {
-	animation-name: animate--suborbit;
+  animation-name: animate-suborbit;
 }
 
 .solar-system--3d .orbit {
-	border: solid 5px rgba(#fff, 0.1);
-	transform-style: preserve-3d;
+  border: solid 5px rgba(#fff, 0.1);
+  transform-style: preserve-3d;
 }
 
 $orbits: (
-	'mercury': (
-		orbitSize: $orbit-mercury-size,
-		margin: -$orbit-mercury-size / 2,
-		animationDuration: $orbital-period-mercury
-	),
-	'venus': (
-		orbitSize: $orbit-venus-size,
-		margin: -$orbit-venus-size / 2,
-		animationDuration: $orbital-period-venus
-	),
-	'earth': (
-		orbitSize: $orbit-earth-size,
-		margin: -$orbit-earth-size / 2,
-		animationDuration: $orbital-period-earth
-	),
-	'moon': (
-		orbitSize: $orbit-moon-size,
-		margin: -$orbit-moon-size / 2,
-		animationDuration: $orbital-period-moon
-	),
-	'mars': (
-		orbitSize: $orbit-mars-size,
-		margin: -$orbit-mars-size / 2,
-		animationDuration: $orbital-period-mars
-	),
-	'jupiter': (
-		orbitSize: $orbit-jupiter-size,
-		margin: -$orbit-jupiter-size / 2,
-		animationDuration: $orbital-period-jupiter
-	),
-	'saturn': (
-		orbitSize: $orbit-saturn-size,
-		margin: -$orbit-saturn-size / 2,
-		animationDuration: $orbital-period-saturn
-	),
-	'uranus': (
-		orbitSize: $orbit-uranus-size,
-		margin: -$orbit-uranus-size / 2,
-		animationDuration: $orbital-period-uranus
-	),
-	'neptune': (
-		orbitSize: $orbit-neptune-size,
-		margin: -$orbit-neptune-size / 2,
-		animationDuration: $orbital-period-neptune
-	)
+  "mercury": (
+    orbitSize: $orbit-mercury-size,
+    margin: -$orbit-mercury-size / 2,
+    animationDuration: $orbital-period-mercury
+  ),
+  "venus": (
+    orbitSize: $orbit-venus-size,
+    margin: -$orbit-venus-size / 2,
+    animationDuration: $orbital-period-venus
+  ),
+  "earth": (
+    orbitSize: $orbit-earth-size,
+    margin: -$orbit-earth-size / 2,
+    animationDuration: $orbital-period-earth
+  ),
+  "moon": (
+    orbitSize: $orbit-moon-size,
+    margin: -$orbit-moon-size / 2,
+    animationDuration: $orbital-period-moon
+  ),
+  "mars": (
+    orbitSize: $orbit-mars-size,
+    margin: -$orbit-mars-size / 2,
+    animationDuration: $orbital-period-mars
+  ),
+  "jupiter": (
+    orbitSize: $orbit-jupiter-size,
+    margin: -$orbit-jupiter-size / 2,
+    animationDuration: $orbital-period-jupiter
+  ),
+  "saturn": (
+    orbitSize: $orbit-saturn-size,
+    margin: -$orbit-saturn-size / 2,
+    animationDuration: $orbital-period-saturn
+  ),
+  "uranus": (
+    orbitSize: $orbit-uranus-size,
+    margin: -$orbit-uranus-size / 2,
+    animationDuration: $orbital-period-uranus
+  ),
+  "neptune": (
+    orbitSize: $orbit-neptune-size,
+    margin: -$orbit-neptune-size / 2,
+    animationDuration: $orbital-period-neptune
+  )
 );
 
 @each $name, $orbit in $orbits {
-	.orbit--#{$name} {
-		width: map-get($orbit, orbitSize);
-		height: map-get($orbit, orbitSize);
-		margin-top: map-get($orbit, margin);
-		margin-left: map-get($orbit, margin);
-		animation-duration: map-get($orbit, animationDuration);
-	}
+  .orbit--#{$name} {
+    width: map-get($orbit, orbitSize);
+    height: map-get($orbit, orbitSize);
+    margin-top: map-get($orbit, margin);
+    margin-left: map-get($orbit, margin);
+    animation-duration: map-get($orbit, animationDuration);
+  }
 }
 
 // ##################################################################
 // ###################### ANIMATION TIME! ###########################
 // ##################################################################
 
-@keyframes animate--orbit {
-	0% {
-		transform: rotateZ(0deg);
-	}
+@keyframes animate-orbit {
+  0% {
+    transform: rotateZ(0deg);
+  }
 
-	100% {
-		transform: rotateZ(-360deg);
-	}
+  100% {
+    transform: rotateZ(-360deg);
+  }
 }
 
-@keyframes animate--suborbit {
-	0% {
-		transform: rotateX(90deg) rotateZ(0deg);
-	}
+@keyframes animate-suborbit {
+  0% {
+    transform: rotateX(90deg) rotateZ(0deg);
+  }
 
-	100% {
-		transform: rotateX(90deg) rotateZ(-360deg);
-	}
+  100% {
+    transform: rotateX(90deg) rotateZ(-360deg);
+  }
 }
