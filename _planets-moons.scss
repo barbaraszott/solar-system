@@ -24,6 +24,11 @@
     animation-iteration-count: infinite;
   }
 
+  & .planet--jupiter,
+  & .planet--saturn {
+    animation-name: animate-huge-planet--3d, animate-planet--2d;
+  }
+
   & .moon {
     animation-duration: $orbital-period-moon;
   }
@@ -34,6 +39,11 @@
   & .planet,
   & .moon {
     animation-name: animate-planet--3d;
+  }
+
+  & .planet--jupiter,
+  & .planet--saturn {
+    animation-name: animate-huge-planet--3d;
   }
 }
 
@@ -104,6 +114,16 @@ $planets: (
 @keyframes animate-planet--3d {
   0% {
     transform: rotateX(-90deg) rotateY(360deg) rotateZ(360deg);
+  }
+
+  100% {
+    transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+  }
+}
+
+@keyframes animate-huge-planet--3d {
+  0% {
+    transform: rotateX(-90deg) rotateY(360deg) rotateZ(0deg);
   }
 
   100% {
