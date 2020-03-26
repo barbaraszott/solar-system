@@ -14,10 +14,11 @@
   left: 50%;
 }
 
-.solar-system--3d {
+.solar-system {
   & .planet,
   & .moon {
-    animation-name: animate--planet;
+    // add two animations, so when view changes animations does not restart
+    animation-name: animate-planet--3d, animate-planet--2d;
     transform-style: preserve-3d;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -25,6 +26,14 @@
 
   & .moon {
     animation-duration: $orbital-period-moon;
+  }
+}
+
+// overwrite animation-name in 3d mode (cascade)
+.solar-system--3d {
+  & .planet,
+  & .moon {
+    animation-name: animate-planet--3d;
   }
 }
 
@@ -87,23 +96,23 @@ $planets: (
     animation-duration: map-get($planet, animationDuration);
 
     @if ($name != "saturn" and $name != "jupiter") {
-      box-shadow: inset
-        0px
-        #{map-get($planet, planetSize) /
-        5}
-        0px
-        0px
-        map-get($planet, shadowColor);
+      box-shadow: inset 0px #{map-get($planet, planetSize) / 5} 0px 0px map-get($planet, shadowColor);
     }
   }
 }
 
-@keyframes animate--planet {
+@keyframes animate-planet--3d {
   0% {
     transform: rotateX(-90deg) rotateY(360deg) rotateZ(360deg);
   }
 
   100% {
     transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+  }
+}
+
+@keyframes animate-planet--2d {
+  0% {
+    transform: none;
   }
 }
