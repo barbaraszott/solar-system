@@ -9,8 +9,13 @@
   animation-iteration-count: infinite;
 }
 
+.orbit--moon {
+  border: solid 1px rgba(#fff, 0.2);
+}
+
 .solar-system--3d .orbit--moon {
   animation-name: animate-suborbit;
+  border: solid 3px rgba(#fff, 0.1);
 }
 
 .solar-system--3d .orbit {
