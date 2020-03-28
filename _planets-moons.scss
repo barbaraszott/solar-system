@@ -17,20 +17,24 @@
 .solar-system {
   & .planet,
   & .moon {
-    // add two animations, so when view changes animations does not restart
-    animation-name: animate-planet--3d, animate-planet--2d;
     transform-style: preserve-3d;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
 
-  & .planet--jupiter,
-  & .planet--saturn {
-    animation-name: animate-huge-planet--3d, animate-planet--2d;
+  & .planet {
+    // add two animations, so when view changes animations does not restart
+    animation-name: animate-planet--3d, animate-planet--2d;
   }
 
   & .moon {
+    animation-name: animate-moon--3d, animate-planet--2d;
     animation-duration: $orbital-period-moon;
+  }
+
+  & .planet--jupiter,
+  & .planet--saturn {
+    animation-name: animate-huge-planet--3d, animate-planet--2d;
   }
 }
 
@@ -118,6 +122,17 @@ $planets: (
 
   100% {
     transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+  }
+}
+
+// moon needs to follow its suborbit animation to be always shown properly
+@keyframes animate-moon--3d {
+  0% {
+    transform: rotateX(90deg) rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateX(90deg) rotateZ(-360deg);
   }
 }
 
