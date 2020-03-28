@@ -5,8 +5,8 @@
   width: $moon-size;
   height: $moon-size;
   background-color: $moon-color;
-  margin-top: -$moon-size / 2;
-  margin-left: -$moon-size / 2;
+  margin-top: $moon-size / 2;
+  margin-left: $moon-size / 2;
 }
 
 .planet {
